@@ -1,0 +1,23 @@
+<main>
+  <h1>{{title}}</h1>
+  <p>by {{user.username}} on {{createdAt}}</p>
+  <p>{{content}}</p>
+
+  <section>
+    <h2>Comments</h2>
+    {{#each comments}}
+      <p>{{user.username}}: {{comment_text}} ({{createdAt}})</p>
+    {{else}}
+      <p>No comments yet. Be the first to comment!</p>
+    {{/each}}
+  </section>
+
+  {{#if logged_in}}
+    <form id="comment-form">
+      <textarea id="comment" name="comment" required></textarea>
+      <button type="submit">Add Comment</button>
+    </form>
+  {{else}}
+    <p><a href="/login">Log in</a> to comment on this post.</p>
+  {{/if}}
+</main>

@@ -1,0 +1,13 @@
+<main>
+  <h1>Your Dashboard</h1>
+  <button onclick="location.href='/new-post'">Create New Post</button>
+  {{#each blogs}}
+    <div class="blog-post">
+      <h2><a href="/blog/{{id}}">{{title}}</a></h2>
+      <p>{{content}}</p>
+      <button onclick="location.href='/edit/{{id}}'">Edit</button>
+    </div>
+  {{else}}
+    <p>You haven't created any blog posts yet.</p>
+  {{/each}}
+</main>
