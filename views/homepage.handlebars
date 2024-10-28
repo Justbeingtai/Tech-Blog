@@ -1,12 +1,19 @@
 <main class="main-content">
   <h1 class="text-center mb-4">Welcome to the Tech Blog</h1>
-  {{#each blogs}}
-    <div class="blog-post">
-      <h2><a href="/blog/{{id}}" class="text-primary">{{title}}</a></h2>
-      <p><small>by {{user.username}} on {{createdAt}}</small></p>
-      <p>{{content}}</p>
-    </div>
-  {{else}}
-    <p class="text-center">No blog posts yet. Be the first to create one!</p>
-  {{/each}}
+  <div class="row">
+    {{#each blogs}}
+      <div class="col-md-6 mb-4">
+        <div class="card shadow-sm h-100">
+          <div class="card-body">
+            <h2 class="card-title"><a href="/blog/{{id}}" class="text-primary">{{title}}</a></h2>
+            <p class="card-text text-muted">by {{user.username}} on {{createdAt}}</p>
+            <p class="card-text">{{content}}</p>
+            <a href="/blog/{{id}}" class="btn btn-outline-primary">Read More</a>
+          </div>
+        </div>
+      </div>
+    {{else}}
+      <p class="text-center col-12">No blog posts yet. Be the first to create one!</p>
+    {{/each}}
+  </div>
 </main>
