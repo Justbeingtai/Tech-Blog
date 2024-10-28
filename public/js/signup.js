@@ -16,5 +16,8 @@ document.querySelector('#signup-form').addEventListener('submit', async (event) 
     } else {
       alert('Failed to sign up');
     }
+    
+    console.log("Submitting signup form", { username, password });
+
   }
 });

@@ -1,4 +1,4 @@
-<main>
+<main class="main-content">
   <h1>{{title}}</h1>
   <p>by {{user.username}} on {{createdAt}}</p>
   <p>{{content}}</p>
@@ -15,9 +15,12 @@
   {{#if logged_in}}
     <form id="comment-form">
       <textarea id="comment" name="comment" required></textarea>
-      <button type="submit">Add Comment</button>
+      <button type="submit" class="btn btn-primary">Add Comment</button>
     </form>
   {{else}}
     <p><a href="/login">Log in</a> to comment on this post.</p>
   {{/if}}
 </main>
+
+<!-- Comment Script -->
+<script src="/js/comment.js"></script>

@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Blog, User, Comment } = require('../models');
+const { Blog, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // GET homepage with all blog posts
@@ -39,5 +39,22 @@ router.get('/login', (req, res) => {
   }
   res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+  if (req.session.logged_in) {
+    res.redirect('/dashboard');
+    return;
+  }
+  res.render('signup');
+});
+
+router.get('/new-post', (req, res) => {
+  if (req.session.logged_in) {
+    res.render('new-post', { logged_in: true });
+  } else {
+    res.redirect('/login');
+  }
+});
+
 
 module.exports = router;

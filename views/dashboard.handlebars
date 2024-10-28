@@ -1,13 +1,16 @@
-<main>
-  <h1>Your Dashboard</h1>
-  <button onclick="location.href='/new-post'">Create New Post</button>
+<main class="main-content">
+  <h1 class="text-center mb-4">Your Dashboard</h1>
+  <button class="btn btn-success mb-3" onclick="location.href='/new-post'">Create New Post</button>
   {{#each blogs}}
     <div class="blog-post">
-      <h2><a href="/blog/{{id}}">{{title}}</a></h2>
+      <h2><a href="/blog/{{id}}" class="text-primary">{{title}}</a></h2>
       <p>{{content}}</p>
-      <button onclick="location.href='/edit/{{id}}'">Edit</button>
+      <button class="btn btn-warning" onclick="location.href='/edit/{{id}}'">Edit</button>
     </div>
   {{else}}
-    <p>You haven't created any blog posts yet.</p>
+    <p class="text-center">You haven't created any blog posts yet.</p>
   {{/each}}
 </main>
+
+<!-- Blog Post Script -->
+<script src="/js/blog.js"></script>

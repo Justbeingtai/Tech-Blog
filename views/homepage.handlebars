@@ -1,12 +1,12 @@
-<main>
-  <h1>Welcome to the Tech Blog</h1>
+<main class="main-content">
+  <h1 class="text-center mb-4">Welcome to the Tech Blog</h1>
   {{#each blogs}}
     <div class="blog-post">
-      <h2><a href="/blog/{{id}}">{{title}}</a></h2>
-      <p>by {{user.username}} on {{createdAt}}</p>
+      <h2><a href="/blog/{{id}}" class="text-primary">{{title}}</a></h2>
+      <p><small>by {{user.username}} on {{createdAt}}</small></p>
       <p>{{content}}</p>
     </div>
   {{else}}
-    <p>No blog posts yet. Be the first to create one!</p>
+    <p class="text-center">No blog posts yet. Be the first to create one!</p>
   {{/each}}
 </main>
